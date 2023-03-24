@@ -1,0 +1,46 @@
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+}
+tr {
+  width: 399px;
+}
+
+td {
+  width: 133px;
+  height: 133px;
+  border: 5px solid black;
+  cursor: pointer;
+}
+
+td:hover {
+  background-color: rgba(16, 163, 127, 0.1);
+}
+td:first-child {
+  border-left: none; /* Kein Linker Border */
+}
+
+td:last-child {
+  border-right: none; /* Kein Rechter Border */
+}
+
+tr:first-child td {
+  border-top: none; /* Kein Oberer Border */
+}
+
+tr:last-child td {
+  border-bottom: none; /* Kein Unterer Border */
+}
+
+/* Utilitie Classes */
+.d-none {
+  display: none;
+}
