@@ -24,73 +24,93 @@ function play(id) {
 
 function checkForWin() {
   let winner;
-  let winningCells = [];
 
   // Row 1
   if (board[0] == board[1] && board[1] == board[2] && board[1]) {
     winner = board[0];
-    document.getElementById("line-1").style.transform = "scaleX(1)";
+    markWinningFields(0, 1, 2);
     console.log(`Der Gewinner ist: ${winner}`);
   }
 
   // Row 2
   if (board[3] == board[4] && board[4] == board[5] && board[3]) {
     winner = board[3];
-    document.getElementById("line-2").style.transform = "scaleX(1)";
-
+    markWinningFields(3, 4, 5);
     console.log(`Der Gewinner ist: ${winner}`);
   }
   // Row 3
   if (board[6] == board[7] && board[7] == board[8] && board[6]) {
     winner = board[6];
-    winningCells = [6, 7, 8];
+    markWinningFields(6, 7, 8);
 
     console.log(`Der Gewinner ist: ${winner}`);
   }
   // Column 1
   if (board[0] == board[3] && board[3] == board[6] && board[0]) {
     winner = board[0];
-    winningCells = [0, 3, 6];
+    markWinningFields(0, 3, 6);
 
     console.log(`Der Gewinner ist: ${winner}`);
   }
   // Column 2
   if (board[1] == board[4] && board[4] == board[7] && board[1]) {
     winner = board[1];
-    winningCells = [1, 4, 7];
+    markWinningFields(1, 4, 7);
 
     console.log(`Der Gewinner ist: ${winner}`);
   }
   // Column 3
   if (board[2] == board[5] && board[5] == board[8] && board[2]) {
     winner = board[2];
-    winningCells = [2, 5, 8];
+    markWinningFields(2, 5, 8);
 
     console.log(`Der Gewinner ist: ${winner}`);
   }
   // Cross top left to bottom right
   if (board[0] == board[4] && board[4] == board[8] && board[0]) {
     winner = board[0];
-    winningCells = [0, 4, 8];
+    markWinningFields(0, 4, 8);
 
     console.log(`Der Gewinner ist: ${winner}`);
   }
   // Cross top right to bottom left
   if (board[2] == board[4] && board[4] == board[6] && board[2]) {
     winner = board[2];
-    winningCells = [2, 4, 6];
+    markWinningFields(2, 4, 6);
 
     console.log(`Der Gewinner ist: ${winner}`);
   }
 
-  if (winner == "circle") {
-    console.log(`Der Gewinner ist: ${winner}`);
-    winnerImg.setAttribute("src", "./assets/circle.png");
-    winnerImg.classList.remove("d-none");
-  }
+  showWinner(winner);
 }
 
 function restartGame() {
   winnerImg.classList.add("d-none");
   board = [];
+  currentPlayer = "circle";
+  for (let i = 0; i < 9; i++) {
+    document.getElementById(`cross${i}`).classList.add("d-none");
+    document.getElementById(`circle${i}`).classList.add("d-none");
+    document.getElementById(`field${i}`).style.backgroundColor = "";
+  }
+}
+
+function showWinner(winner) {
+  if (winner == "cross") {
+    winnerImg.setAttribute("src", "./assets/cross.png");
+    winnerImg.classList.remove("d-none");
+  }
+  if (winner == "circle") {
+    winnerImg.setAttribute("src", "./assets/circle.png");
+    winnerImg.classList.remove("d-none");
+  }
+}
+
+function markWinningFields(a, b, c) {
+  document.getElementById(`field${a}`).style.backgroundColor =
+    "rgb(255, 107, 107)";
+  document.getElementById(`field${b}`).style.backgroundColor =
+    "rgb(255, 107, 107)";
+  document.getElementById(`field${c}`).style.backgroundColor =
+    "rgb(255, 107, 107)";
 }

@@ -5,6 +5,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: beige;
+  overflow-x: hidden;
 }
 
 .heading-wrapper {
@@ -57,16 +59,6 @@ tr:last-child td {
   display: none;
 }
 
-.horizontal-line {
-  height: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 350px;
-  position: absolute;
-  transform: scaleX(0);
-  transition: transform 225ms ease-in-out;
-  z-index: 1;
-}
-
 #restart-btn {
   background-color: rgba(255, 204, 0, 0.2);
   border: none;
@@ -91,8 +83,36 @@ tr:last-child td {
   font-size: 1.25rem;
 }
 
+.bottom-text-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
 #winner {
   object-fit: cover;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
+  align-self: center;
+}
+
+.table-wrapper {
+  position: relative;
+}
+
+@media screen and (max-width: 490px) {
+  tr {
+    width: 299px;
+  }
+  td {
+    width: 66px;
+    height: 66px;
+  }
+  td img {
+    width: 50px;
+    height: 50px;
+  }
+  .heading {
+    font-size: 2rem;
+  }
 }
