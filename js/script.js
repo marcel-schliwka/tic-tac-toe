@@ -8,6 +8,9 @@ let winnerImg = document.getElementById("winner");
 
 function play(id) {
   board[id] = currentPlayer;
+  if (checkAlreadyClicked(id)) {
+    return 0;
+  }
   if (currentPlayer == "circle") {
     document.getElementById(`circle${id}`).classList.remove("d-none");
     document.getElementById(`cross${id}`).classList.add("d-none");
@@ -22,6 +25,14 @@ function play(id) {
   checkForWin();
 }
 
+function checkAlreadyClicked(index) {
+  if (!document.getElementById(`circle${index}`).classList.contains("d-none")) {
+    return true;
+  }
+  if (!document.getElementById(`cross${index}`).classList.contains("d-none")) {
+    return true;
+  }
+}
 function checkForWin() {
   let winner;
 
