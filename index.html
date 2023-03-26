@@ -8,51 +8,177 @@
     <title>Tic-Tac-Toe</title>
   </head>
   <body>
+    <div class="heading-wrapper">
+      <h1 class="heading">Tic-Tac-Toe</h1>
+    </div>
+    <div id="line-1" class="horizontal-line" style="top: 325px"></div>
+    <div id="line-2" class="horizontal-line" style="top: 400px"></div>
+    <div id="line-3" class="horizontal-line" style="top: 532px"></div>
+    <div
+      id="line-4"
+      class="horizontal-line make-vertical"
+      style="top: 400px; left: 120px"
+    ></div>
+    <div
+      id="line-5"
+      class="horizontal-line make-vertical"
+      style="top: 400px"
+    ></div>
+    <div
+      id="line-6"
+      class="horizontal-line make-vertical"
+      style="top: 400px; right: 123px"
+    ></div>
+    <div
+      id="line-7"
+      class="horizontal-line"
+      style="top: 400px; transform: rotate(45deg) scaleX(0)"
+    ></div>
+    <div
+      id="line-8"
+      class="horizontal-line"
+      style="top: 400px; transform: rotate(-45deg) scaleX(0)"
+    ></div>
     <table>
       <tr>
-        <td id="field1">
-          <img src="./assets/circle.png" alt="Circle" class="d-none" />
-          <img src="./assets/cross.png" alt="Cross" class="d-none" />
+        <td onclick="play(0)" id="field0">
+          <img
+            id="circle0"
+            src="./assets/circle.png"
+            alt="Circle"
+            class="d-none"
+          />
+          <img
+            id="cross0"
+            src="./assets/cross.png"
+            alt="Cross"
+            class="d-none"
+          />
         </td>
-        <td id="field2">
-          <img src="./assets/circle.png" alt="Circle" class="d-none" />
-          <img src="./assets/cross.png" alt="Cross" class="d-none" />
+        <td onclick="play(1)" id="field1">
+          <img
+            id="circle1"
+            src="./assets/circle.png"
+            alt="Circle"
+            class="d-none"
+          />
+          <img
+            id="cross1"
+            src="./assets/cross.png"
+            alt="Cross"
+            class="d-none"
+          />
         </td>
-        <td id="field3">
-          <img src="./assets/circle.png" alt="Circle" class="d-none" />
-          <img src="./assets/cross.png" alt="Cross" class="d-none" />
+        <td onclick="play(2)" id="field2">
+          <img
+            id="circle2"
+            src="./assets/circle.png"
+            alt="Circle"
+            class="d-none"
+          />
+          <img
+            id="cross2"
+            src="./assets/cross.png"
+            alt="Cross"
+            class="d-none"
+          />
         </td>
       </tr>
       <tr>
-        <td id="field4">
-          <img src="./assets/circle.png" alt="Circle" class="d-none" />
-          <img src="./assets/cross.png" alt="Cross" class="d-none" />
+        <td onclick="play(3)" id="field3">
+          <img
+            id="circle3"
+            src="./assets/circle.png"
+            alt="Circle"
+            class="d-none"
+          />
+          <img
+            id="cross3"
+            src="./assets/cross.png"
+            alt="Cross"
+            class="d-none"
+          />
         </td>
-        <td id="field5">
-          <img src="./assets/circle.png" alt="Circle" class="d-none" />
-          <img src="./assets/cross.png" alt="Cross" class="d-none" />
+        <td onclick="play(4)" id="field4">
+          <img
+            id="circle4"
+            src="./assets/circle.png"
+            alt="Circle"
+            class="d-none"
+          />
+          <img
+            id="cross4"
+            src="./assets/cross.png"
+            alt="Cross"
+            class="d-none"
+          />
         </td>
-        <td id="field6">
-          <img src="./assets/circle.png" alt="Circle" class="d-none" />
-          <img src="./assets/cross.png" alt="Cross" class="d-none" />
+        <td onclick="play(5)" id="field5">
+          <img
+            id="circle5"
+            src="./assets/circle.png"
+            alt="Circle"
+            class="d-none"
+          />
+          <img
+            id="cross5"
+            src="./assets/cross.png"
+            alt="Cross"
+            class="d-none"
+          />
         </td>
       </tr>
       <tr>
-        <td id="field7">
-          <img src="./assets/circle.png" alt="Circle" class="d-none" />
-          <img src="./assets/cross.png" alt="Cross" class="d-none" />
+        <td onclick="play(6)" id="field6">
+          <img
+            id="circle6"
+            src="./assets/circle.png"
+            alt="Circle"
+            class="d-none"
+          />
+          <img
+            id="cross6"
+            src="./assets/cross.png"
+            alt="Cross"
+            class="d-none"
+          />
         </td>
-        <td id="field8">
-          <img src="./assets/circle.png" alt="Circle" class="d-none" />
-          <img src="./assets/cross.png" alt="Cross" class="d-none" />
+        <td onclick="play(7)" id="field7">
+          <img
+            id="circle7"
+            src="./assets/circle.png"
+            alt="Circle"
+            class="d-none"
+          />
+          <img
+            id="cross7"
+            src="./assets/cross.png"
+            alt="Cross"
+            class="d-none"
+          />
         </td>
-        <td id="field9">
-          <img src="./assets/circle.png" alt="Circle" class="d-none" />
-          <img src="./assets/cross.png" alt="Cross" class="d-none" />
+        <td onclick="play(8)" id="field8">
+          <img
+            id="circle8"
+            src="./assets/circle.png"
+            alt="Circle"
+            class="d-none"
+          />
+          <img
+            id="cross8"
+            src="./assets/cross.png"
+            alt="Cross"
+            class="d-none"
+          />
         </td>
       </tr>
     </table>
-
+    <div class="bottom-wrapper">
+      <button id="restart-btn">Restart</button>
+      <p class="bottom-text">
+        Winner: <img alt="Winner" class="d-none" id="winner" />
+      </p>
+    </div>
     <script src="./js/script.js"></script>
   </body>
 </html>
